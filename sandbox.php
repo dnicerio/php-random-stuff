@@ -53,6 +53,48 @@
   // Make directory
   // mkdir('quotes');
 
+  // Classes
+  class User {
+    private $name;
+    private $email;
+
+    public function __construct($name, $email){
+      $this->name = $name;
+      $this->email = $email;
+    }
+
+    public function login(){
+      echo $this->name . ' has logged in';
+    }
+
+    public function getName(){
+      echo $this->name;
+    }
+
+    public function setName($name){
+      if(is_string($name) && strlen($name) > 1){
+        $this->name = $name;
+        echo 'name has been updated to ' . $this->name;
+      } else {
+        echo 'not a valid name';
+      }
+    }
+  }
+
+  // $userOne = new User();
+  // $userOne->login();
+  // echo $userOne->name;
+  // echo $userOne->email;
+
+  $userTwo = new User('yoshi', 'yoshi@gmail.com');
+  // echo $userTwo->name;
+  // echo $userTwo->email;
+  // echo $userTwo->login();
+
+  echo $userTwo->getName();
+  $userTwo->setName('mario');
+  echo $userTwo->getName();
+
 ?>
 
 <!DOCTYPE html>
